@@ -96,10 +96,11 @@ RUN python3 -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \
 #     /tmp/flash_attn-2.8.2+cu12torch2.5cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
 
 # install packages
-# RUN apt-get update && apt-get -y upgrade && \
-#     apt-get install -q -y --no-install-recommends \
-#     ros-humble-desktop \
-#     && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y upgrade && \
+    apt-get install -q -y --no-install-recommends \
+    ros-humble-rmw-cyclonedds-cpp \
+    ros-humble-cyclonedds \
+    && rm -rf /var/lib/apt/lists/*
 
 
 CMD ["bash"]
